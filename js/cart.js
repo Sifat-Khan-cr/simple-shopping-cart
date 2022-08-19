@@ -32,6 +32,8 @@ function finalTotal() {
 }
 
 
+
+
 getId("phone-plus").addEventListener('click', function () {
     updateTotal(true, "phone-quantity");
     getId("phone-total").innerText = newQuantity * 1219;
@@ -56,6 +58,20 @@ getId("case-plus").addEventListener('click', function () {
 getId("case-minus").addEventListener('click', function () {
     updateTotal(false, "case-quantity");
     getId("case-total").innerText = newQuantity * 59;
+    subTotal();
+    tax();
+    finalTotal();
+})
+getId('phone-remove').addEventListener('click', function () {
+    getId("cart-phone").style.display = "none";
+    getId("phone-total").innerText = 0;
+    subTotal();
+    tax();
+    finalTotal();
+})
+getId('case-remove').addEventListener('click', function () {
+    getId("cart-case").style.display = "none";
+    getId("case-total").innerText = 0;
     subTotal();
     tax();
     finalTotal();
